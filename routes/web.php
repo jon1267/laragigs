@@ -6,6 +6,13 @@ use App\Http\Controllers\ListingController;
 
 // All listings
 Route::get('/', [ListingController::class, 'index']);
+
+// Show create form
+Route::get('/listings/create', [ListingController::class, 'create']);
+
+// Store Listings Data
+Route::post('/listings', [ListingController::class, 'store']);
+
 // Single listing
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
@@ -13,7 +20,7 @@ Route::get('/listings/{listing}', [ListingController::class, 'show']);
     return response('<h1>Hello World</h1>', 200)
         ->header('Content-Type', 'text/plain')
         ->header('foo', 'bar');
-});*/
+});
 
 Route::get('/posts/{id}', function ($id) {
     return response('Post ' . $id);
@@ -22,3 +29,4 @@ Route::get('/posts/{id}', function ($id) {
 Route::get('/search', function (Request $request) {
     dd($request); // $request->query
 });
+*/
