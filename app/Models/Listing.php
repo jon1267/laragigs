@@ -9,6 +9,10 @@ class Listing extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title', 'tags','company', 'location', 'email', 'website', 'description'
+    ];
+
     // по сути толково: в контроллере (см ListingController@index) в выборке данных
     // добавляется ->filter(request(['tag']))->get() + эта функция и есть фильтр тэгов.
     public function scopeFilter($query, array $filters)
