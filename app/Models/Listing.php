@@ -10,7 +10,7 @@ class Listing extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title', 'tags','company', 'location', 'email', 'website', 'description'
+        'title', 'tags','company', 'location', 'email', 'website', 'description', 'logo'
     ];
 
     // по сути толково: в контроллере (см ListingController@index) в выборке данных
