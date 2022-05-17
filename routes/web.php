@@ -29,6 +29,9 @@ Route::get('/listings/{listing}', [ListingController::class, 'show']);
 // Show Register (create user) Form
 Route::get('/register', [UserController::class, 'create']);
 
+// Create New User
+Route::post('/users', [UserController::class, 'store']);
+
 /*Route::get('hello', function () {
     return response('<h1>Hello World</h1>', 200)
         ->header('Content-Type', 'text/plain')
