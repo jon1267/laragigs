@@ -32,6 +32,15 @@ Route::get('/register', [UserController::class, 'create']);
 // Create New User
 Route::post('/users', [UserController::class, 'store']);
 
+// Logout user
+Route::post('/logout', [UserController::class, 'logout']);
+
+// Show Login Form
+Route::get('/login', [UserController::class, 'login']);
+
+// Log In User
+Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+
 /*Route::get('hello', function () {
     return response('<h1>Hello World</h1>', 200)
         ->header('Content-Type', 'text/plain')
