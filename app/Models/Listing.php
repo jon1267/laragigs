@@ -10,7 +10,7 @@ class Listing extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title', 'tags','company', 'location', 'email', 'website', 'description', 'logo'
+        'title', 'user_id','tags','company', 'location', 'email', 'website', 'description', 'logo'
     ];
 
     // по сути толково: в контроллере (см ListingController@index) в выборке данных
@@ -26,5 +26,11 @@ class Listing extends Model
                 ->orWhere('description', 'like', '%' . request('search') . '%')
                 ->orWhere('tags', 'like', '%' . request('search') . '%');
         }
+    }
+
+    // Relation with User (там 'user_id' ненада, но можно :)
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
 }
